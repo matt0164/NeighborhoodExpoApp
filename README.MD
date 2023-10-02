@@ -1,7 +1,7 @@
 # For questions, please contact matt0164@outlook.com
 
 To start app:
-1.	Navigate to directory
+1.	Navigate to directory that contains source code, e.g.:
 Cd \Users\matta\OneDrive\Matt0164 Documents\OneDrive\Documents\00 Matt\Coding\NeighborhoodExpoApp\
 2.	npx expo start (not expo start with new expo CLI)
 
