@@ -1,0 +1,9 @@
+import { initializeApp } from 'firebase/app';
+
+// Add your app's Firebase project configuration
+const firebaseConfig = {
+    apiKey: process.env.FIREBASE_BROWSER_API_KEY,
+    databaseURL: "https://msp-neighborhood-default-rtdb.firebaseio.com/",
+};
+
+const app = initializeApp(firebaseConfig);
