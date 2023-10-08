@@ -3,7 +3,13 @@ import { initializeApp } from 'firebase/app';
 // Add your app's Firebase project configuration
 const firebaseConfig = {
     apiKey: process.env.FIREBASE_BROWSER_API_KEY,
-    databaseURL: "https://msp-neighborhood-default-rtdb.firebaseio.com/",
+    authDomain: "msp-neighborhood.firebaseapp.com",
+    databaseURL: "https://msp-neighborhood-default-rtdb.firebaseio.com",
+    projectId: "msp-neighborhood",
+    storageBucket: "msp-neighborhood.appspot.com",
+    messagingSenderId: "292117513070",
+    appId: "1:292117513070:web:a79c18144168a0678af77f",
+    measurementId: "G-F9FTXM2CMS"
 };
 
 const app = initializeApp(firebaseConfig);
