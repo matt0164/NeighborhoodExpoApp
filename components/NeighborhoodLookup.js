@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 import firebase from '../firebase/firebase';
+import Fuse from 'fuse.js'; // Import Fuse.js
 
 const database = firebase.database();
 
@@ -29,9 +30,7 @@ function NeighborhoodLookup() {
 
   let fuse;
 
-  const lookupNeighborhood = async () => {
-    const neighborhoodData = await readNeighborhoodData();
-
+  const lookupNeighborhood = () => {
     if (neighborhoodData) {
       fuse = new Fuse(neighborhoodData, options);
       const results = fuse.search(nameInput);
@@ -117,6 +116,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: 'black',
   },
+
 });
 
 export default NeighborhoodLookup;
