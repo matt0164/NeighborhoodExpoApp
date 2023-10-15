@@ -1,0 +1,12 @@
+{
+  "1234567890": {
+    "userID": "1234567890",
+    "name": "John Doe",
+    "neighborhood": "Neighborhood A"
+  },
+  "1234567891": {
+    "userID": "1234567891",
+    "name": "Jane Doe",
+    "neighborhood": "Neighborhood B"
+  }
+}

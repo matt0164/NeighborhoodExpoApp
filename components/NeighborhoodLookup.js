@@ -1,38 +1,48 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
-import firebase from '../firebase/firebase';
+import { View, Text, TextInput, Pressable, StyleSheet } from 'react-native';
 import Fuse from 'fuse.js'; // Import Fuse.js
-
-const database = firebase.database();
 
 function NeighborhoodLookup() {
   const [neighborhoodData, setNeighborhoodData] = useState(null);
   const [nameInput, setNameInput] = useState('');
   const [result, setResult] = useState('');
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function readNeighborhoodData() {
-      const neighborhoodRef = database.ref('neighborhoods');
-      const snapshot = await neighborhoodRef.get();
-      const neighborhoodData = snapshot.val();
+      try {
+        // Fetch the JSON data from your server
+        const response = await fetch('http://localhost:8080/database.json');
+        const data = await response.json();
 
-      setNeighborhoodData(neighborhoodData);
+        if (data) {
+          setNeighborhoodData(data);
+          setLoading(false);
+        } else {
+          console.error('Neighborhood data not found.');
+          setLoading(false);
+        }
+      } catch (error) {
+        console.error('Error fetching neighborhood data:', error);
+        setLoading(false);
+      }
     }
 
     readNeighborhoodData();
   }, []);
 
-  const options = {
-    includeScore: true,
-    keys: ['name'],
-    threshold: 0.3,
-  };
-
-  let fuse;
-
   const lookupNeighborhood = () => {
     if (neighborhoodData) {
-      fuse = new Fuse(neighborhoodData, options);
+      const options = {
+        includeScore: true,
+        keys: ['name'],
+        threshold: 0.3,
+      };
+
+      // Create a Fuse instance
+      const fuse = new Fuse(Object.values(neighborhoodData), options);
+
+      // Search for a neighborhood
       const results = fuse.search(nameInput);
 
       if (results.length > 0) {
@@ -49,74 +59,56 @@ function NeighborhoodLookup() {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Neighborhood Lookup</Text>
-      <View style={styles.backgroundContainer}>
-        <View style={styles.searchContainer}>
-          <Text style={styles.inputLabel}>Enter your name:</Text>
-          <TextInput
-            style={styles.input}
-            value={nameInput}
-            onChangeText={(text) => setNameInput(text)}
-          />
-          <Button
-            title="Find Neighborhood"
-            onPress={lookupNeighborhood}
-          />
-        </View>
-        <View style={styles.resultContainer}>
-          <Text style={styles.result}>{result}</Text>
-        </View>
-      </View>
+      <TextInput
+        style={styles.input}
+        value={nameInput}
+        onChangeText={(text) => setNameInput(text)}
+      />
+      <Pressable
+        style={styles.button}
+        onPress={lookupNeighborhood}
+      >
+        <Text style={styles.buttonText}>Find Neighborhood</Text>
+      </Pressable>
+      <Text style={styles.result}>{result}</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    backgroundColor: 'lightgray',
+    padding: 20,
     alignItems: 'center',
-    justifyContent: 'center',
   },
   header: {
-    fontSize: 30,
+    fontSize: 24,
     fontWeight: 'bold',
-    color: 'white',
-  },
-  backgroundContainer: {
-    marginTop: 30,
-    backgroundColor: 'lightgray',
-    alignItems: 'center',
-    borderRadius: 10,
-    padding: 20,
-  },
-  searchContainer: {
-    alignItems: 'center',
-    marginBottom: 30,
-    paddingHorizontal: 20,
-  },
-  inputLabel: {
-    fontSize: 18,
-    color: 'black',
+    color: 'blue',
+    marginBottom: 20,
   },
   input: {
-    width: 200,
-    height: 40,
-    borderWidth: 2,
-    borderColor: 'gray',
-    marginBottom: 10,
-    paddingHorizontal: 10,
+    backgroundColor: 'white',
+    padding: 10,
     borderRadius: 5,
+    marginBottom: 10,
+    width: '100%',
   },
-  resultContainer: {
+  button: {
+    backgroundColor: 'blue',
+    padding: 10,
+    borderRadius: 5,
     alignItems: 'center',
-    backgroundColor: 'lightgray',
-    padding: 20,
-    borderRadius: 10,
+    justifyContent: 'center',
+    width: '100%',
+  },
+  buttonText: {
+    color: 'white',
   },
   result: {
-    fontSize: 18,
-    color: 'black',
+    marginTop: 10,
+    color: 'blue',
   },
-
 });
 
 export default NeighborhoodLookup;

@@ -5,6 +5,9 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "dependencies": {
+      "firebase/database": "^9.10.0"
+    },
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
