@@ -28,3 +28,4 @@ To get app on app store using EAS
 5.	Build: eas build --platform ios [replace ios if necessary]
 
 Note: backend database and image rendering will need to be modified before ios app deployment possible
+merge
