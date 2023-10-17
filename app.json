@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "MSPNeighborhood",
+    "slug": "mspneighborhoods",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "dependencies": {
+      "firebase/database": "^9.10.0"
+    },
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.matt0164.MSPNeighborhood"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e5025fab-c5e2-4262-97d1-7b05b912a21d"
+      }
+    },
+    "owner": "matt0164"
+  }
+}
