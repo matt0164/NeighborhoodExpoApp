@@ -11,8 +11,8 @@ function NeighborhoodLookup() {
   useEffect(() => {
     async function readNeighborhoodData() {
       try {
-        // Fetch the JSON data from your server
-        const response = await fetch('http://localhost:8080/database.json');
+        // Fetch the JSON data from your http server
+        const response = await fetch('http://localhost:8080/database.json')
         const data = await response.json();
 
         if (data) {
