@@ -11,6 +11,7 @@
   "dependencies": {
     "@expo/webpack-config": "^19.0.0",
     "expo": "~49.0.8",
+    "expo-cli": "^6.3.10",
     "expo-status-bar": "~1.6.0",
     "finalhandler": "^1.2.0",
     "fuse": "^0.4.0",
@@ -18,7 +19,8 @@
     "react": "18.2.0",
     "react-native": "0.72.5",
     "react-native-web": "~0.19.6",
-    "serve-static": "^1.15.0"
+    "serve-static": "^1.15.0",
+    "expo-updates": "~0.18.16"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

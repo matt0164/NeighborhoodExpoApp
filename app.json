@@ -1,40 +1,70 @@
 {
   "expo": {
-    "name": "MSPNeighborhood",
+    "name": "mspneighborhoods",
     "slug": "mspneighborhoods",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "dependencies": {
-      "firebase/database": "^9.10.0"
-    },
-    "userInterfaceStyle": "light",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.matt0164.MSPNeighborhood"
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
+      "@expo/webpack-config": "^19.0.0",
+      "expo": "~49.0.8",
+      "expo-cli": "^6.3.10",
+      "expo-status-bar": "~1.6.0",
+      "finalhandler": "^1.2.0",
+      "fuse": "^0.4.0",
+      "fuse.js": "6.6.2",
+      "react": "18.2.0",
+      "react-native": "0.72.5",
+      "react-native-web": "~0.19.6",
+      "serve-static": "^1.15.0",
+      "expo-updates": "~0.18.16"
     },
     "extra": {
       "eas": {
         "projectId": "e5025fab-c5e2-4262-97d1-7b05b912a21d"
       }
     },
-    "owner": "matt0164"
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/e5025fab-c5e2-4262-97d1-7b05b912a21d"
+    },
+    "android": {},
+    "ios": {}
+  },
+  "userInterfaceStyle": "light",
+  "splash": {
+    "image": "./assets/splash.png",
+    "resizeMode": "contain",
+    "backgroundColor": "#ffffff"
+  },
+  "assetBundlePatterns": [
+    "**/*"
+  ],
+  "ios": {
+    "supportsTablet": true,
+    "bundleIdentifier": "com.matt0164.MSPNeighborhood"
+  },
+  "android": {
+    "adaptiveIcon": {
+      "foregroundImage": "./assets/adaptive-icon.png",
+      "backgroundColor": "#ffffff"
+    }
+  },
+  "web": {
+    "favicon": "./assets/favicon.png"
+  },
+  "extra": {
+    "eas": {
+      "projectId": "e5025fab-c5e2-4262-97d1-7b05b912a21d"
+    }
+  },
+  "owner": "matt0164",
+  "runtimeVersion": {
+    "policy": "appVersion"
+  },
+  "updates": {
+    "url": "https://u.expo.dev/e5025fab-c5e2-4262-97d1-7b05b912a21d"
   }
 }
