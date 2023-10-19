@@ -7,6 +7,11 @@ version 1.0.0-beta.1
 ### 1.	Navigate to directory that contains source code, e.g.:
         Cd "C:\Users\matta\OneDrive\Matt0164 Documents\OneDrive\Documents\00 Matt\Coding\NeighborhoodExpoApp\"
 
+### this project lives on github here:
+        https://github.com/matt0164/NeighborhoodExpoApp.git
+        git@github.com:matt0164/NeighborhoodExpoApp.git
+        gh repo clone matt0164/NeighborhoodExpoApp
+
 ### 2.    Open a new terminal window and run the custom server script using Node.js:
         node custom-server.js
 
@@ -55,5 +60,6 @@ version 1.0.0-beta.1
 3.	Login: eas login
 4.	Configure: eas build:configure
 5.	Build: eas build --platform ios [replace ios if necessary]
+6.      build:view       view a build for your project
 
 Note: backend database and image rendering will need to be modified before ios app deployment possible. Recommend implementing firebase or SQLite before ios build
