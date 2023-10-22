@@ -7,6 +7,10 @@ version 1.0.0-beta.1
 ### 1.	Navigate to directory that contains source code, e.g.:
         Cd "C:\Users\matta\OneDrive\Matt0164 Documents\OneDrive\Documents\00 Matt\Coding\NeighborhoodExpoApp\"
 
+        or
+
+        Cd "C:\Coding\NeighborhoodExpoApp\"
+
 ### this project lives on github here:
         https://github.com/matt0164/NeighborhoodExpoApp.git
         git@github.com:matt0164/NeighborhoodExpoApp.git
@@ -15,17 +19,20 @@ version 1.0.0-beta.1
 #### to clone:
         git clone -b [insert branch] https://github.com/matt0164/NeighborhoodExpoApp.git
 
-### 2.    Open a new terminal window and run the custom server script using Node.js:
+### 3.  Install all dependencies*
+        npm install
+
+### 3.    Open a new terminal window and run the custom server script using Node.js:
         node custom-server.js
 
-### 3.	Open a new terminal (node) window and launch expo
+### 4.	Open a new terminal (node) window and launch expo
         npx expo start 
         
 #### Note: expo V17 node js - expo start will not work with this new expo CLI
 
-# Key dependencies:
-        npm install
-####        Note: will install all dependencies if in project root directory when run
+## *Key dependencies:
+        
+####        Note: npm install will install all dependencies if in project root directory when run
 
             #        {
             #            "name": "mspneighborhoods",
