@@ -1,5 +1,7 @@
 # Neighborhood Lookup Tool - Expo React Native Web App
 version 1.0.0-beta.1
+eas-deployment branch is to test building web version in eas
+
 ### For questions, please contact matt0164@outlook.com
 
 # To test / start app:
