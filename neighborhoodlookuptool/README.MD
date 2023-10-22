@@ -9,7 +9,7 @@ version 1.0.0-beta.1
 
         or
 
-        Cd "C:\Coding\NeighborhoodExpoApp\"
+        Cd "C:\Coding\NeighborhoodExpoApp\neighborhoodlookuptool"
 
 ### this project lives on github here:
         https://github.com/matt0164/NeighborhoodExpoApp.git
