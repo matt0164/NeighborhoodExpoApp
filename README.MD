@@ -12,6 +12,9 @@ version 1.0.0-beta.1
         git@github.com:matt0164/NeighborhoodExpoApp.git
         gh repo clone matt0164/NeighborhoodExpoApp
 
+#### to clone:
+        git clone -b [insert branch] https://github.com/matt0164/NeighborhoodExpoApp.git
+
 ### 2.    Open a new terminal window and run the custom server script using Node.js:
         node custom-server.js
 
