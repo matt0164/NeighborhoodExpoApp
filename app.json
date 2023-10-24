@@ -24,15 +24,15 @@
         "projectId": "e5025fab-c5e2-4262-97d1-7b05b912a21d"
       }
     },
-    
     "runtimeVersion": {
       "policy": "appVersion"
     },
     "updates": {
       "url": "https://u.expo.dev/e5025fab-c5e2-4262-97d1-7b05b912a21d"
     },
-    "android": {},
-    "ios": {}
+    "android": {
+      "package": "com.matt0164.mspneighborhoods"
+    }
   },
   "userInterfaceStyle": "light",
   "splash": {
@@ -43,16 +43,6 @@
   "assetBundlePatterns": [
     "**/*"
   ],
-  "ios": {
-    "supportsTablet": true,
-    "bundleIdentifier": "com.matt0164.MSPNeighborhood"
-  },
-  "android": {
-    "adaptiveIcon": {
-      "foregroundImage": "./assets/adaptive-icon.png",
-      "backgroundColor": "#ffffff"
-    }
-  },
   "web": {
     "favicon": "./assets/favicon.png"
   },

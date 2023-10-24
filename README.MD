@@ -29,8 +29,41 @@ eas-build2 branch is to test building web version in eas
         npx expo start
                 [or]
         npx expo start --web
-        
 #### Note: expo V17 node js - expo start will not work with this new expo CLI
+
+### 5.  To deploy to EAS servers:
+###     Creating a build of the project is the first step to publishing a web app. Whether you want to serve it locally or host it on a third-party service, you'll need to export all JavaScript and assets of a project. This is known as a static bundle. It can be exported by running the following command:
+        npx expo export:web 
+
+### 6.  Use Serve CLI to quickly test locally how your website will be hosted in production. Run the following command to serve the static bundle:
+        npx serve web-build --single        
+
+### 7. Open http://localhost:5000 to see your project in action. This method is HTTP only, so permissions, camera, location, and many other things won't work.
+        Open http://localhost:5000
+
+### 8. Hosting on third-party services
+        https://docs.expo.dev/distribution/publishing-websites/#hosting-on-third-party-services
+
+###     Netlify is a mostly-unopinionated platform for deploying web apps. This has the highest
+###     compatibility with Expo web apps as it makes few assumptions about the framework.
+
+###     8a.     Install the Netlify CLI by running the following command:
+
+                npm install -g netlify-cli
+
+###     8b. (if required) Configure redirects for single-page applications.
+###             If your app implements any navigation, you'll need to configure Netlify to redirect 
+###             requests to the single web-build/index.html file. This can be done in Netlify by 
+###             creating a ./public/_redirects file and redirecting all requests to /index.html.
+
+###     Navigate inside the web-build directory and run the following command to create 
+###             _redirects file with follwing rule:
+
+                /*    /index.html   200
+
+###     8c. Deploy the web build folder by running the following command:
+
+                netlify deploy --dir web-build
 
 ## *Key dependencies:
         
