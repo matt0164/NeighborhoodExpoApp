@@ -12,23 +12,23 @@ eas-build2 branch is to test building web version in eas
 # To start app:
 
 ### 1.	Navigate to directory that contains source code, e.g.:
-        Cd "C:\Users\matta\OneDrive\Matt0164 Documents\OneDrive\Documents\00 Matt\Coding\NeighborhoodExpoApp\"
+Cd "C:\Users\matta\OneDrive\Matt0164 Documents\OneDrive\Documents\00 Matt\Coding\NeighborhoodExpoApp\"
 
         or
 
-        Cd "C:\NeighborhoodExpoApp\"
+Cd "C:\NeighborhoodExpoApp\"
 
 #### to clone:
-        git clone -b [insert branch] https://github.com/matt0164/NeighborhoodExpoApp.git
+git clone -b [insert branch] https://github.com/matt0164/NeighborhoodExpoApp.git
 
 ### 3.  Install all dependencies*
-        npm install
+npm install
 
 ### 3.    Open a new terminal window and run the custom server script using Node.js:
-        node custom-server.js
+node custom-server.js
 
 ### 4.	Open a new terminal (node) window and launch expo
-        npx expo start 
+npx expo start 
         
 #### Note: expo V17 node js - expo start will not work with this new expo CLI
 
