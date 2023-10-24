@@ -1,23 +1,40 @@
 # Neighborhood Lookup Tool - Expo React Native Web App
 version 1.0.0-beta.1
-### For questions, please contact matt0164@outlook.com
+eas-build2 branch is to test building web version in eas
 
-# To test / start app:
+### this project lives on github here:
+        https://github.com/matt0164/NeighborhoodExpoApp.git
+        git@github.com:matt0164/NeighborhoodExpoApp.git
+        gh repo clone matt0164/NeighborhoodExpoApp
+
+## For questions, please contact matt0164@outlook.com
+
+# To start app:
 
 ### 1.	Navigate to directory that contains source code, e.g.:
         Cd "C:\Users\matta\OneDrive\Matt0164 Documents\OneDrive\Documents\00 Matt\Coding\NeighborhoodExpoApp\"
 
-### 2.    Open a new terminal window and run the custom server script using Node.js:
+        or
+
+        Cd "C:\NeighborhoodExpoApp\"
+
+#### to clone:
+        git clone -b [insert branch] https://github.com/matt0164/NeighborhoodExpoApp.git
+
+### 3.  Install all dependencies*
+        npm install
+
+### 3.    Open a new terminal window and run the custom server script using Node.js:
         node custom-server.js
 
-### 3.	Open a new terminal (node) window and launch expo
+### 4.	Open a new terminal (node) window and launch expo
         npx expo start 
         
 #### Note: expo V17 node js - expo start will not work with this new expo CLI
 
-# Key dependencies:
-        npm install
-####        Note: will install all dependencies if in project root directory when run
+## *Key dependencies:
+        
+####        Note: npm install will install all dependencies if in project root directory when run
 
             #        {
             #            "name": "mspneighborhoods",
@@ -55,5 +72,6 @@ version 1.0.0-beta.1
 3.	Login: eas login
 4.	Configure: eas build:configure
 5.	Build: eas build --platform ios [replace ios if necessary]
+6.      build:view       view a build for your project
 
 Note: backend database and image rendering will need to be modified before ios app deployment possible. Recommend implementing firebase or SQLite before ios build
