@@ -13,9 +13,7 @@ eas-build2 branch is to test building web version in eas
 
 ### 1.	Navigate to directory that contains source code, e.g.:
         Cd "C:\Users\matta\OneDrive\Matt0164 Documents\OneDrive\Documents\00 Matt\Coding\NeighborhoodExpoApp\"
-
-                or
-
+                [or]
         Cd "C:\NeighborhoodExpoApp\"
 
 #### to clone:
@@ -28,7 +26,9 @@ eas-build2 branch is to test building web version in eas
         node custom-server.js
 
 ### 4.	Open a new terminal (node) window and launch expo
-        npx expo start 
+        npx expo start
+                [or]
+        npx expo start --web
         
 #### Note: expo V17 node js - expo start will not work with this new expo CLI
 

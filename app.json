@@ -24,6 +24,7 @@
         "projectId": "e5025fab-c5e2-4262-97d1-7b05b912a21d"
       }
     },
+    
     "runtimeVersion": {
       "policy": "appVersion"
     },
@@ -54,11 +55,6 @@
   },
   "web": {
     "favicon": "./assets/favicon.png"
-  },
-  "extra": {
-    "eas": {
-      "projectId": "e5025fab-c5e2-4262-97d1-7b05b912a21d"
-    }
   },
   "owner": "matt0164",
   "runtimeVersion": {
