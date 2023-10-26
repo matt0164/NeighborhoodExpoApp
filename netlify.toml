@@ -3,4 +3,5 @@ command = "npx expo export:web"
 publish = "web-build"
 
 [context]
-branch = "easbuild2"
+  [context.branch]
+    branch = "easbuild2"
