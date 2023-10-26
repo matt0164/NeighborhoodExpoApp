@@ -1,2 +1,6 @@
 [build]
-publish = "database.json"
+command = "npx expo export:web"
+publish = "web-build"
+
+[context]
+branch = "easbuild2"
