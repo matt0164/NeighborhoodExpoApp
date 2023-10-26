@@ -1,6 +1,6 @@
 [build]
 command = "npx expo export:web"
-publish = "web-build"
+publish = ["web-build", "database.json"]
 
 [context]
   [context.branch]
