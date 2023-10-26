@@ -11,8 +11,11 @@ function NeighborhoodLookup() {
   useEffect(() => {
     async function readNeighborhoodData() {
       try {
-        // Fetch the JSON data from your http server
-        const response = await fetch('http://localhost:8080/database.json')
+        // Fetch the JSON data from your local http server during testing
+        //const response = await fetch('http://localhost:8080/database.json')
+        
+        // Fetch the JSON data from your Netlify server during production
+        const response = await fetch('https://neighborhoodlookuptool.netlify.app/database.json');
         const data = await response.json();
 
         if (data) {

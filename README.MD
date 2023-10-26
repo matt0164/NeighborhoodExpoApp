@@ -9,7 +9,15 @@ eas-build2 branch is to test building web version in eas
 
 ## For questions, please contact matt0164@outlook.com
 
-# To start app:
+## The app has been deployed using netlify
+Website URL:       https://neighborhoodlookuptool.netlify.app
+
+Build logs:        https://app.netlify.com/sites/neighborhoodlookuptool/deploys/6537882552389c0504b3992f
+Function logs:     https://app.netlify.com/sites/neighborhoodlookuptool/functions
+Unique deploy URL: https://6537882552389c0504b3992f--neighborhoodlookuptool.netlify.app
+
+
+# To start app and test locally:
 
 ### 1.	Navigate to directory that contains source code, e.g.:
         Cd "C:\Users\matta\OneDrive\Matt0164 Documents\OneDrive\Documents\00 Matt\Coding\NeighborhoodExpoApp\"
@@ -38,13 +46,13 @@ eas-build2 branch is to test building web version in eas
 ### 6.  Use Serve CLI to quickly test locally how your website will be hosted in production. Run the following command to serve the static bundle:
         npx serve web-build --single        
 
-### 7. Open http://localhost:5000 to see your project in action. This method is HTTP only, so permissions, camera, location, and many other things won't work.
-        Open http://localhost:5000
+### 7. Open http://localhost:3000 to see your project in action. This method is HTTP only, so permissions, camera, location, and many other things won't work.
+        Open http://localhost:3000
 
 ### 8. Hosting on third-party services
         https://docs.expo.dev/distribution/publishing-websites/#hosting-on-third-party-services
 
-###     Netlify is a mostly-unopinionated platform for deploying web apps. This has the highest
+###     Netlify is a platform for deploying web apps. This has the highest
 ###     compatibility with Expo web apps as it makes few assumptions about the framework.
 
 ###     8a.     Install the Netlify CLI by running the following command:
@@ -64,6 +72,8 @@ eas-build2 branch is to test building web version in eas
 ###     8c. Deploy the web build folder by running the following command:
 
                 netlify deploy --dir web-build
+###         If everything looks good, deploy to production
+                netlify deploy --prod
 
 ## *Key dependencies:
         
