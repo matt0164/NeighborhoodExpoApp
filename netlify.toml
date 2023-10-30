@@ -1,5 +1,5 @@
 [build]
-command = "npx expo export:web"
+command = "npx expo export:web && cp public/* web-build"
 
 [context]
   [context.branch]
