@@ -12,7 +12,7 @@ function NeighborhoodLookup() {
     async function readNeighborhoodData() {
       try {
         //Fetch the JSON data from your local http server during testing
-        //const response = await fetch('http://localhost:8080/database.json')
+        //const response = await fetch('http://localhost:8080/public/database.json')
         
         // Fetch the JSON data from your Netlify server during production
         const response = await fetch('https://neighborhoodlookuptool.netlify.app/public/database.json');
