@@ -1,6 +1,6 @@
 [build]
 command = "npx expo export:web"
-publish = "."
+publish = "public"
 
 [context]
   [context.branch]
