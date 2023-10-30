@@ -1,6 +1,5 @@
 [build]
 command = "npx expo export:web"
-base = "public"
 publish = "."
 
 [context]
