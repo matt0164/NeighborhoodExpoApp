@@ -1,58 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import { View, Text, TextInput, Pressable, StyleSheet } from 'react-native';
-import Fuse from 'fuse.js'; // Import Fuse.js
+import Fuse from 'fuse.js';
+import database from '../database.json';
 
 function NeighborhoodLookup() {
-  const [neighborhoodData, setNeighborhoodData] = useState(null);
   const [nameInput, setNameInput] = useState('');
   const [result, setResult] = useState('');
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    async function readNeighborhoodData() {
-      try {
-        // Fetch the JSON data from your http server
-        const response = await fetch('http://localhost:8080/database.json')
-        const data = await response.json();
+  const neighborhoodList = useMemo(() => Object.values(database), []);
 
-        if (data) {
-          setNeighborhoodData(data);
-          setLoading(false);
-        } else {
-          console.error('Neighborhood data not found.');
-          setLoading(false);
-        }
-      } catch (error) {
-        console.error('Error fetching neighborhood data:', error);
-        setLoading(false);
-      }
-    }
-
-    readNeighborhoodData();
-  }, []);
-
-  const lookupNeighborhood = () => {
-    if (neighborhoodData) {
-      const options = {
+  const fuse = useMemo(
+    () =>
+      new Fuse(neighborhoodList, {
         includeScore: true,
         keys: ['name'],
         threshold: 0.3,
-      };
+      }),
+    [neighborhoodList],
+  );
 
-      // Create a Fuse instance
-      const fuse = new Fuse(Object.values(neighborhoodData), options);
+  const lookupNeighborhood = () => {
+    const results = fuse.search(nameInput.trim());
 
-      // Search for a neighborhood
-      const results = fuse.search(nameInput);
-
-      if (results.length > 0) {
-        const match = results[0].item;
-        setResult(`${match.name}: Your neighborhood is ${match.neighborhood}`);
-      } else {
-        setResult('Name not found in the neighborhood table.');
-      }
+    if (results.length > 0) {
+      const match = results[0].item;
+      setResult(`${match.name}: Your neighborhood is ${match.neighborhood}`);
     } else {
-      setResult('Neighborhood data file not found.');
+      setResult('Name not found in the neighborhood table.');
     }
   };
 
@@ -62,12 +36,12 @@ function NeighborhoodLookup() {
       <TextInput
         style={styles.input}
         value={nameInput}
-        onChangeText={(text) => setNameInput(text)}
+        onChangeText={setNameInput}
+        autoCorrect={false}
+        autoCapitalize="words"
+        accessibilityLabel="Name to look up"
       />
-      <Pressable
-        style={styles.button}
-        onPress={lookupNeighborhood}
-      >
+      <Pressable style={styles.button} onPress={lookupNeighborhood}>
         <Text style={styles.buttonText}>Find Neighborhood</Text>
       </Pressable>
       <Text style={styles.result}>{result}</Text>

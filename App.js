@@ -7,17 +7,12 @@
 //the JSON file is a list of names and neighborhoods
 //the image in the background is randomly selected from an array of images
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { View, Text, Pressable, Linking, ImageBackground, StyleSheet } from 'react-native';
-import { Asset } from 'expo-asset';
 import NeighborhoodLookup from './components/NeighborhoodLookup';
 import { getRandomBackgroundImage } from './components/image_array';
 
 export default function App() {
-  useEffect(() => {
-    // Download any initial data or perform other setup here
-  }, []);
-
   const downloadPDF = async () => {
     // Download the PDF from the web and use Linking to open it in a PDF viewer.
     const pdfShareLink = 'https://1drv.ms/b/s!AlYNfSmM3j0Dneorgk4OOcvlQYbyow?e=vDGv7e';
@@ -29,7 +24,7 @@ export default function App() {
 
   return (
     <ImageBackground
-      source={{ uri: selectedBackgroundImage }}
+      source={selectedBackgroundImage}
       style={styles.container}
     >
       <View>
