@@ -4,8 +4,8 @@
   "main": "expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
-    "android": "expo run:android",
-    "ios": "expo run:ios",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
     "web": "expo start --web",
     "serve-data": "node custom-server.js"
   },
@@ -22,6 +22,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.28.0"
+  },
+  "overrides": {
+    "uuid": "^14.0.0"
   },
   "private": true
 }

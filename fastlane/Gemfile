@@ -1,3 +1,4 @@
 source "https://rubygems.org"
 
-gem "fastlane"
+# 2.233.x resolves Dependabot-flagged Ruby deps (rexml, addressable, faraday, aws-sdk-s3, etc.).
+gem "fastlane", "~> 2.233.0"
