@@ -1,16 +1,38 @@
 {
   "cli": {
-    "version": ">= 5.4.0"
+    "version": ">= 14.0.0"
   },
   "build": {
     "development": {
       "developmentClient": true,
-      "distribution": "internal"
+      "distribution": "internal",
+      "channel": "development",
+      "ios": {
+        "image": "sdk-54"
+      },
+      "android": {
+        "image": "sdk-54"
+      }
     },
     "preview": {
-      "distribution": "internal"
+      "distribution": "internal",
+      "channel": "preview",
+      "ios": {
+        "image": "sdk-54"
+      },
+      "android": {
+        "image": "sdk-54"
+      }
     },
-    "production": {}
+    "production": {
+      "channel": "production",
+      "ios": {
+        "image": "sdk-54"
+      },
+      "android": {
+        "image": "sdk-54"
+      }
+    }
   },
   "submit": {
     "production": {

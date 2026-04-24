@@ -17,6 +17,7 @@
       "bundleIdentifier": "com.matt0164.MSPNeighborhood"
     },
     "android": {
+      "package": "com.matt0164.msneighborhood",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
