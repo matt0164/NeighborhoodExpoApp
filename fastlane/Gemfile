@@ -1,4 +1,10 @@
 source "https://rubygems.org"
 
-# 2.233.x resolves Dependabot-flagged Ruby deps (rexml, addressable, faraday, aws-sdk-s3, etc.).
-gem "fastlane", "~> 2.233.0"
+# CVE-2026-45363: require jwt ~> 3.2 for empty-key HMAC fix. Released fastlane (e.g. 2.234.0) still
+# pins jwt < 3 until the next RubyGems release; track jwt-widening merge until 2.235+ ships, then revert to:
+# gem "fastlane", "~> 2.235"
+gem "fastlane",
+    git: "https://github.com/fastlane/fastlane.git",
+    ref: "17054b235c12826daba96d9d29ba76fdb939a5ec"
+
+gem "jwt", "~> 3.2"

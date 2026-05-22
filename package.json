@@ -24,7 +24,8 @@
     "@babel/core": "^7.28.0"
   },
   "overrides": {
-    "uuid": "^14.0.0"
+    "uuid": "^14.0.0",
+    "brace-expansion@5.0.5": "5.0.6"
   },
   "private": true
 }
